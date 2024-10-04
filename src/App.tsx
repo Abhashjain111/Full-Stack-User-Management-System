@@ -1,26 +1,23 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Typography } from 'antd';
+import UserList from './components/userList';
+import 'antd/dist/reset.css'; // Import Ant Design styles
 
-function App() {
+const { Header, Content } = Layout;
+const { Title } = Typography;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{background:'white'}} >
+      <Header style={{ background: 'white', padding: '50px 20px',textAlign:'center',fontFamily:'serif' }}>
+        <Title level={2} >User Management</Title>
+      </Header>
+      <Content style={{ margin: '20px',width:'100%',backgroundColor:'white' }}>
+        <UserList />
+      </Content>
+    </Layout>
   );
-}
+};
 
 export default App;
